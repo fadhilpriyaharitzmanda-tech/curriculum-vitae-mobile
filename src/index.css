@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Design System & Modern CSS Variables
+   ========================================================================== */
+:root {
+  --font-editorial: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', 'Syne', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Color Palette inspired by Reference Photo 1 */
+  --color-slate-blue: #6c8ca3;
+  --color-slate-light: #94b1c7;
+  --color-slate-dark: #374e61;
+  --color-white: #ffffff;
+  --color-white-translucent: rgba(255, 255, 255, 0.88);
+  --color-white-muted: rgba(255, 255, 255, 0.68);
+  --color-white-faint: rgba(255, 255, 255, 0.38);
+
+  /* Modern Glassmorphism */
+  --glass-bg: rgba(22, 32, 48, 0.65);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.35);
+
+  /* Touch & Safe Areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tap-target-min: 44px;
+
+  /* App Canvas */
+  --mobile-frame-width: 420px;
+  --mobile-frame-height: 860px;
+  --mobile-frame-radius: 42px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #0b0f17;
+  color: #f1f5f9;
+  font-family: var(--font-editorial);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}

@@ -1,0 +1,365 @@
+/* ==========================================================================
+   Mobile-First Clean Portfolio & CV (Rombak Total Semantik & Sejajar)
+   ========================================================================== */
+
+/* Shell Kontainer HP (Diselaraskan Langsung untuk Layar Smartphone) */
+.mobile-shell {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  z-index: 10;
+  user-select: none;
+  background: #ffffff;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.55);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 480px) {
+  .mobile-shell {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
+
+/* ==========================================================================
+   SECTION 1: HERO POSTER (Persis Foto Referensi, Tanpa Tahun 2026)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Latar Belakang Foto Lelaki */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: contrast(1.04) brightness(0.96) saturate(0.9);
+}
+
+/* Gradien Langit Atmosferik (Soft Blue Mist persis Foto 1) */
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(146, 178, 199, 0.68) 0%,
+    rgba(125, 155, 175, 0.46) 28%,
+    rgba(70, 95, 115, 0.2) 55%,
+    rgba(15, 22, 30, 0.35) 75%,
+    rgba(10, 14, 20, 0.88) 100%
+  );
+}
+
+/* ==========================================================================
+   Header Navigasi Atas
+   ========================================================================== */
+.hero-nav {
+  position: relative;
+  z-index: 20;
+  padding: 22px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-btn-audio {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: lowercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: color 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.muted {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ==========================================================================
+   Baris Utama Hero: Kiri (Headline) & Kanan (Subquote di Bawah 'tentang')
+   ========================================================================== */
+.hero-main-row {
+  position: relative;
+  z-index: 20;
+  padding: 58px 20px 0; /* Dibawahin sedikit secara sejajar dari header */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Sejajar garis atas secara horizontal */
+  width: 100%;
+}
+
+/* Kolom Kiri: Headline Tebal Montserrat ExtraBold */
+.hero-col-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.75rem, 7.5vw, 2.2rem);
+  font-weight: 800; /* Montserrat ExtraBold */
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  margin: 0 0 12px 0;
+}
+
+/* Ikon Kutipan ❝ & Garis Horizontal Putih */
+.hero-quote-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.hero-quote-icon {
+  font-family: serif;
+  font-size: 1.65rem;
+  line-height: 1;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.hero-quote-line {
+  width: 82px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Kolom Kanan: Berada di Bawah Button 'tentang' & Sejajar Tinggi dengan Headline */
+.hero-col-right {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-top: 3px; /* Penyelarasan mikro agar sejajar presisi dengan garis atas 'Jadi' */
+}
+
+.hero-subquote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-align: right;
+  max-width: 175px;
+  margin: 0 0 10px 0;
+}
+
+.hero-date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600; /* Poppins semi-bold */
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  text-align: right;
+}
+
+/* Ruang Tengah Bersih & Lapang untuk Foto */
+.hero-spacer {
+  flex: 1;
+  min-height: 120px;
+  cursor: pointer;
+}
+
+/* Footer Hero: Kutipan Bawah */
+.hero-footer {
+  position: relative;
+  z-index: 20;
+  padding: 0 20px 34px;
+  width: 100%;
+}
+
+.hero-footer-line {
+  font-size: 0.71rem;
+  line-height: 1.42;
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 400;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+  margin: 0 0 6px 0;
+  max-width: 90%;
+}
+
+.hero-footer-line:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: HALAMAN TENTANG AKU (Font Ramping, Murni Hitam, Gaya Story IG)
+   ========================================================================== */
+.about-section {
+  background: #ffffff;
+  color: #000000;
+  padding: 56px 20px 68px;
+  position: relative;
+  z-index: 10;
+}
+
+.about-container {
+  width: 100%;
+}
+
+/* Judul Story IG di Halaman Tentang Aku (Font Ramping & Hitam) */
+.about-header {
+  margin-bottom: 22px;
+}
+
+.about-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Ramping & rapi */
+  font-size: clamp(1.6rem, 6.6vw, 1.95rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #000000; /* Murni hitam */
+  margin: 0 0 12px 0;
+}
+
+/* Ikon Kutipan ❝ & Garis Horizontal Hitam */
+.about-quote-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.about-quote-icon {
+  font-family: serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #000000; /* Hitam */
+}
+
+.about-quote-line {
+  width: 76px;
+  height: 1.5px;
+  background: #000000; /* Hitam */
+  border-radius: 1px;
+}
+
+/* Paragraf Cerita Diri (Hitam, Rapi, & Ramping) */
+.about-body {
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  color: #000000; /* Murni hitam */
+  margin: 0 0 16px 0;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+.about-text strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Tautan Kontak Sederhana (Warna Hitam) */
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.about-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #000000; /* Hitam */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.about-link:hover {
+  opacity: 0.6;
+}
+
+/* Toast Notice */
+.toast-box {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 300;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: toastPop 0.3s ease;
+}
+
+@keyframes toastPop {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
